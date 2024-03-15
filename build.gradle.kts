@@ -24,6 +24,7 @@ repositories {
 
 dependencies {
     paperweight.paperDevBundle("1.20.4-R0.1-SNAPSHOT")
+    bukkitLibrary("de.eldoria.util", "debugging", "2.0.3")
     bukkitLibrary("de.eldoria.util", "jackson-configuration", "2.0.3")
     bukkitLibrary("de.eldoria.jacksonbukkit", "jackson-bukkit", "1.2.0")
     bukkitLibrary("com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.15.2")
