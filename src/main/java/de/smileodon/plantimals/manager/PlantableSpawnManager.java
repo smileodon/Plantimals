@@ -32,7 +32,6 @@ public class PlantableSpawnManager {
     }
 
     public void startSpawnScheduler() {
-        System.out.println("Starting scheduler...");
         // Schedule this to run asynchronously every minute
         new BukkitRunnable() {
             @Override
@@ -43,7 +42,6 @@ public class PlantableSpawnManager {
     }
 
     private void checkAndSpawnPlantimals() {
-        System.out.println("Checking plantimals... ");
         LocalDateTime now = LocalDateTime.now().truncatedTo(ChronoUnit.MINUTES);
         // Use PlantableManager to get plantimal due to spawn this minute
         NavigableMap<LocalDateTime, Plantimal> duePlantimals = PlantimalsManager.INSTANCE.getPlantimalsThatSpawnThisMinute(now);

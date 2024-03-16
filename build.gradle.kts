@@ -13,7 +13,7 @@ java {
 
 
 group = "de.smileodon"
-version = "1.0-SNAPSHOT"
+version = "1.0"
 
 
 

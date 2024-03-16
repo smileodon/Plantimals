@@ -52,7 +52,6 @@ public class PlayerClickListener implements Listener {
                                 if (material == Material.PORKCHOP || material == Material.MUTTON || material == Material.RABBIT ||
                                         material == Material.CHICKEN || material == Material.BEEF) {
                                     event.setCancelled(true);
-                                    System.out.println("Planting new Plantimal...");
                                     PlantimalType plantimalType = PlantimalType.fromMaterial(material);
                                     LocalDateTime timeToSpawn = addSecondsToTimestamp(LocalDateTime.now(), getSecondsTillSpawnFromConfig(plantimalType));
                                     Location location = clickedBlock.getLocation();
@@ -62,8 +61,6 @@ public class PlayerClickListener implements Listener {
                                     PlantimalsManager.INSTANCE.addPlantable(
                                             new Plantimal(plantimalType, plantimalSpawnLocation, timeToSpawn, armorStand)
                                     );
-                                    // TODO spawn armor stand
-
                                     if (player.getGameMode() != GameMode.CREATIVE) {
                                         itemStack.setAmount(itemStack.getAmount() - 1);
                                         player.getInventory().setItemInMainHand(itemStack);

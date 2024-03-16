@@ -8,11 +8,11 @@ public class MainConfig {
     private boolean onlyActiveWhenSneaking = true;
     private int requiredMoistureLevel = 1;
 
-    private int secondsTillPigSpawns = 300;
-    private int secondsTillSheepSpawns = 300;
-    private int secondsTillRabbitSpawns = 300;
-    private int secondsTillChickenSpawns = 300;
-    private int secondsTillCowSpawns = 300;
+    private int secondsTillPigSpawns = 60;
+    private int secondsTillSheepSpawns = 60;
+    private int secondsTillRabbitSpawns = 60;
+    private int secondsTillChickenSpawns = 60;
+    private int secondsTillCowSpawns = 60;
 
     private ArrayList<Plantimal> plantimals = new ArrayList<>();
 

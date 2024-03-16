@@ -51,7 +51,6 @@ public enum PlantimalsManager {
 
     private void loadDataFromConfig() {
         plantimalsAsList.clear();
-        System.out.println(plantimalsConfig);
         plantimalsAsList.addAll(plantimalsConfig.getPlantimals());
         setPlantableMaps(plantimalsConfig.getPlantimals());
     }
@@ -79,7 +78,6 @@ public enum PlantimalsManager {
     }
 
     public void addPlantable(Plantimal plantimal) {
-        System.out.println("Adding Plantimal: \n" + plantimal);
         plantimalsByLocation.put(plantimal.getLocation(), plantimal);
         plantimalsByTime.put(plantimal.getTimeToSpawn(), plantimal);
         plantimalsAsList.add(plantimal);
@@ -99,7 +97,6 @@ public enum PlantimalsManager {
     }
 
     public NavigableMap<LocalDateTime, Plantimal> getPlantimalsThatSpawnThisMinute(LocalDateTime now) {
-        System.out.println("List of plantimals: " + plantimalsByTime.size());
         long toleranceSeconds = 60; // 1-minute tolerance
         // Define the search range based on tolerance
         LocalDateTime lowerBound = now.minusSeconds(toleranceSeconds);
