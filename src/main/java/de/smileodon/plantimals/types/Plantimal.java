@@ -54,7 +54,6 @@ public class Plantimal {
                 return (ArmorStand) entity;
             }
         }
-        System.out.println("Armorstand not found");
         return null;
     }
 }

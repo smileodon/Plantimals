@@ -56,7 +56,6 @@ public enum PlantimalsManager {
     public void savePlantimalsConfig() {
         plantimalsConfig.setPlantimals(new ArrayList<>(plantimals));
         jacksonConfig.save(plantimalsConfigKey);
-        System.out.println("Saving config");
     }
 
     public MainConfig getMainConfig() {
