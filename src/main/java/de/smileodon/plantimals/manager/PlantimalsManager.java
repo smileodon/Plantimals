@@ -1,5 +1,6 @@
 package de.smileodon.plantimals.manager;
 
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import de.eldoria.eldoutilities.config.ConfigKey;
 import de.eldoria.eldoutilities.config.JacksonConfig;
 import de.smileodon.plantimals.PlantimalsPlugin;
@@ -34,6 +35,8 @@ public enum PlantimalsManager {
     public void loadConfigs(PlantimalsPlugin plugin) {
 
         JacksonConfig<MainConfig> config = new JacksonConfig<>(plugin, ConfigKey.defaultConfig(MainConfig.class, MainConfig::new));
+        config.mapper().registerModule(new JavaTimeModule());
+
 
         var plantimalsConfigConfigKey = ConfigKey.of("second", Path.of("plantimals.yml"), PlantimalsConfig.class, PlantimalsConfig::new);
         PlantimalsConfig plantimalsConfig = config.secondary(plantimalsConfigConfigKey);
@@ -113,12 +116,12 @@ public enum PlantimalsManager {
 
     // TODO: Fix bug with timestamp
     private void savePlantimalsConfig() {
-        /*
+
         jacksonConfig.main().setPlantimals(plantimalsAsList);
         jacksonConfig.save();
         System.out.println("Saving config");
 
-         */
+
     }
 
     public MainConfig getMainConfig() {

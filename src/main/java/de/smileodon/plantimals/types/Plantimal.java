@@ -1,24 +1,24 @@
 package de.smileodon.plantimals.types;
 
 import org.bukkit.Location;
-import org.bukkit.entity.ArmorStand;
 import org.bukkit.entity.EntityType;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 public class Plantimal {
     private final PlantimalType plantimalType;
     private final Location location;
     private final LocalDateTime timeToSpawn;
 
-    private final ArmorStand armorStand;
+    private final UUID armorStandUUID;
 
 
-    public Plantimal(PlantimalType plantimalType, Location location, LocalDateTime timeToSpawn, ArmorStand armorStand) {
+    public Plantimal(PlantimalType plantimalType, Location location, LocalDateTime timeToSpawn, UUID armorStandUUID) {
         this.plantimalType = plantimalType;
         this.location = location;
         this.timeToSpawn = timeToSpawn;
-        this.armorStand = armorStand;
+        this.armorStandUUID = armorStandUUID;
     }
 
 
@@ -34,8 +34,8 @@ public class Plantimal {
         return plantimalType.getEntityType();
     }
 
-    public ArmorStand getArmorStand() {
-        return armorStand;
+    public UUID getArmorStandUUID() {
+        return armorStandUUID;
     }
 
     @Override

@@ -59,7 +59,7 @@ public class PlayerClickListener implements Listener {
                                     Location armorStandSpawnLocation = new Location(location.getWorld(), location.getX() + 0.5, location.getY() + 0.03, location.getZ());
                                     ArmorStand armorStand = spawnFlatItem(armorStandSpawnLocation, plantimalType.getMaterial());
                                     PlantimalsManager.INSTANCE.addPlantable(
-                                            new Plantimal(plantimalType, plantimalSpawnLocation, timeToSpawn, armorStand)
+                                            new Plantimal(plantimalType, plantimalSpawnLocation, timeToSpawn, armorStand.getUniqueId())
                                     );
                                     if (player.getGameMode() != GameMode.CREATIVE) {
                                         itemStack.setAmount(itemStack.getAmount() - 1);
@@ -104,7 +104,6 @@ public class PlayerClickListener implements Listener {
 
     public static ArmorStand spawnFlatItem(Location location, Material material) {
         World world = location.getWorld();
-        if (world == null) return null; // Always check that the world is not null
         // Using this method to set invisibility faster
         return world.spawn(location, ArmorStand.class, armorStand -> {
             armorStand.setVisible(false); // Make the armor stand invisible

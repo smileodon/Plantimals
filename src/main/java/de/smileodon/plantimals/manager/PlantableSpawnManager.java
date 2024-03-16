@@ -4,12 +4,15 @@ import de.smileodon.plantimals.PlantimalsPlugin;
 import de.smileodon.plantimals.types.Plantimal;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
+import org.bukkit.entity.ArmorStand;
+import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
 import org.bukkit.scheduler.BukkitRunnable;
 
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.NavigableMap;
+import java.util.UUID;
 
 public class PlantableSpawnManager {
     private volatile static PlantableSpawnManager instance;
@@ -52,8 +55,10 @@ public class PlantableSpawnManager {
                     // This code runs on the main thread
                     spawnEntity(plantimal.getLocation(), plantimal.getEntityType());
                     // Remove ArmorStand
-                    if (plantimal.getArmorStand() != null) {
-                        plantimal.getArmorStand().remove();
+                    ArmorStand armorStand = getArmorstand(plantimal.getLocation(), plantimal.getArmorStandUUID());
+                    if (armorStand != null) {
+                        System.out.println("Removing armorstand");
+                        armorStand.remove();
                     }
                     // Remove plantimal after spawning to ensure thread-safe operation,
                     // it's executed on the main thread to ensure consistency with Bukkit's single-thread model
@@ -69,5 +74,17 @@ public class PlantableSpawnManager {
             throw new IllegalStateException("spawnEntity must be called from the main thread");
         }
         location.getWorld().spawnEntity(location, entityType);
+    }
+
+    private ArmorStand getArmorstand(Location location, UUID uuid) {
+        // Search for entities within the radius
+        for (Entity entity : location.getWorld().getNearbyEntities(location, 1, 1, 1)) {
+            // Check if the entity is wanted ArmorStand
+            if (entity.getUniqueId().equals(uuid)) {
+                return (ArmorStand) entity;
+            }
+        }
+        System.out.println("Armorstand not found");
+        return null;
     }
 }
