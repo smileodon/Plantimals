@@ -28,7 +28,6 @@ dependencies {
     bukkitLibrary("de.eldoria.util", "jackson-configuration", "2.0.3")
     bukkitLibrary("de.eldoria.jacksonbukkit", "jackson-bukkit", "1.2.0")
     bukkitLibrary("com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.15.2")
-    bukkitLibrary("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.15.2")
 
     testImplementation(platform("org.junit:junit-bom:5.9.1"))
     testImplementation("org.junit.jupiter:junit-jupiter")

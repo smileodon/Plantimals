@@ -1,20 +1,14 @@
 package de.smileodon.plantimals.config;
 
-import de.smileodon.plantimals.types.Plantimal;
-
-import java.util.ArrayList;
-
 public class MainConfig {
     private boolean onlyActiveWhenSneaking = true;
     private int requiredMoistureLevel = 1;
 
-    private int secondsTillPigSpawns = 60;
-    private int secondsTillSheepSpawns = 60;
-    private int secondsTillRabbitSpawns = 60;
-    private int secondsTillChickenSpawns = 60;
-    private int secondsTillCowSpawns = 60;
-
-    private ArrayList<Plantimal> plantimals = new ArrayList<>();
+    private int ticksTillPigSpawns = 1200;
+    private int ticksTillSheepSpawns = 1200;
+    private int ticksTillRabbitSpawns = 1200;
+    private int ticksTillChickenSpawns = 1200;
+    private int ticksTillCowSpawns = 1200;
 
     public MainConfig() {
     }
@@ -23,40 +17,28 @@ public class MainConfig {
         return onlyActiveWhenSneaking;
     }
 
-    public void setOnlyActiveWhenSneaking(boolean onlyActiveWhenSneaking) {
-        this.onlyActiveWhenSneaking = onlyActiveWhenSneaking;
+    public int getTicksTillPigSpawns() {
+        return ticksTillPigSpawns;
     }
 
-    public int getSecondsTillPigSpawns() {
-        return secondsTillPigSpawns;
+    public int getTicksTillSheepSpawns() {
+        return ticksTillSheepSpawns;
     }
 
-    public int getSecondsTillSheepSpawns() {
-        return secondsTillSheepSpawns;
+    public int getTicksTillRabbitSpawns() {
+        return ticksTillRabbitSpawns;
     }
 
-    public int getSecondsTillRabbitSpawns() {
-        return secondsTillRabbitSpawns;
+    public int getTicksTillChickenSpawns() {
+        return ticksTillChickenSpawns;
     }
 
-    public int getSecondsTillChickenSpawns() {
-        return secondsTillChickenSpawns;
-    }
-
-    public int getSecondsTillCowSpawns() {
-        return secondsTillCowSpawns;
+    public int getTicksTillCowSpawns() {
+        return ticksTillCowSpawns;
     }
 
     public int getRequiredMoistureLevel() {
         return requiredMoistureLevel;
     }
 
-
-    public ArrayList<Plantimal> getPlantimals() {
-        return plantimals;
-    }
-
-    public void setPlantimals(ArrayList<Plantimal> plantimals) {
-        this.plantimals = plantimals;
-    }
 }

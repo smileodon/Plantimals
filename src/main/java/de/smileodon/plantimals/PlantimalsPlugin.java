@@ -12,7 +12,8 @@ public class PlantimalsPlugin extends JavaPlugin {
     public void onEnable() {
         PlantimalsManager.INSTANCE.loadConfigs(this);
         Bukkit.getPluginManager().registerEvents(new PlayerClickListener(this), this);
-        PlantableSpawnManager.getInstance(this).startSpawnScheduler();
+        PlantableSpawnManager.INSTANCE.setPlugin(this);
+        PlantableSpawnManager.INSTANCE.startSpawnScheduler();
     }
 
 

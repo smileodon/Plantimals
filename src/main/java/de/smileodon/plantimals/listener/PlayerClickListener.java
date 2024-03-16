@@ -53,13 +53,13 @@ public class PlayerClickListener implements Listener {
                                         material == Material.CHICKEN || material == Material.BEEF) {
                                     event.setCancelled(true);
                                     PlantimalType plantimalType = PlantimalType.fromMaterial(material);
-                                    LocalDateTime timeToSpawn = addSecondsToTimestamp(LocalDateTime.now(), getSecondsTillSpawnFromConfig(plantimalType));
+                                    int tickToSpawn = plugin.getServer().getCurrentTick() + getTicksTillSpawnFromConfig(plantimalType);
                                     Location location = clickedBlock.getLocation();
                                     Location plantimalSpawnLocation = new Location(location.getWorld(), location.getX(), location.getY() + 1, location.getZ());
                                     Location armorStandSpawnLocation = new Location(location.getWorld(), location.getX() + 0.5, location.getY() + 0.03, location.getZ());
                                     ArmorStand armorStand = spawnFlatItem(armorStandSpawnLocation, plantimalType.getMaterial());
                                     PlantimalsManager.INSTANCE.addPlantable(
-                                            new Plantimal(plantimalType, plantimalSpawnLocation, timeToSpawn, armorStand.getUniqueId())
+                                            new Plantimal(plantimalType, plantimalSpawnLocation, tickToSpawn, armorStand.getUniqueId())
                                     );
                                     if (player.getGameMode() != GameMode.CREATIVE) {
                                         itemStack.setAmount(itemStack.getAmount() - 1);
@@ -75,22 +75,22 @@ public class PlayerClickListener implements Listener {
         }
     }
 
-    private int getSecondsTillSpawnFromConfig(PlantimalType plantimalType) {
+    private int getTicksTillSpawnFromConfig(PlantimalType plantimalType) {
         switch (plantimalType) {
             case PIG -> {
-                return config.getSecondsTillPigSpawns();
+                return config.getTicksTillPigSpawns();
             }
             case SHEEP -> {
-                return config.getSecondsTillSheepSpawns();
+                return config.getTicksTillSheepSpawns();
             }
             case RABBIT -> {
-                return config.getSecondsTillRabbitSpawns();
+                return config.getTicksTillRabbitSpawns();
             }
             case CHICKEN -> {
-                return config.getSecondsTillChickenSpawns();
+                return config.getTicksTillChickenSpawns();
             }
             case COW -> {
-                return config.getSecondsTillCowSpawns();
+                return config.getTicksTillCowSpawns();
             }
             default -> {
                 return 300;
