@@ -1,14 +1,14 @@
 package de.smileodon.plantimals.config;
 
 public class MainConfig {
-    private boolean onlyActiveWhenSneaking = true;
-    private int requiredMoistureLevel = 1;
+    private final boolean onlyActiveWhenSneaking = true;
+    private final int requiredMoistureLevel = 1;
 
-    private int ticksTillPigSpawns = 1200;
-    private int ticksTillSheepSpawns = 1200;
-    private int ticksTillRabbitSpawns = 1200;
-    private int ticksTillChickenSpawns = 1200;
-    private int ticksTillCowSpawns = 1200;
+    private final int ticksTillPigSpawns = 1200;
+    private final int ticksTillSheepSpawns = 1200;
+    private final int ticksTillRabbitSpawns = 1200;
+    private final int ticksTillChickenSpawns = 1200;
+    private final int ticksTillCowSpawns = 1200;
 
     public MainConfig() {
     }

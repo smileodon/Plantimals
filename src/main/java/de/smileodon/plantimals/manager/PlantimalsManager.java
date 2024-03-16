@@ -16,7 +16,7 @@ public enum PlantimalsManager {
     INSTANCE;
 
 
-    private PriorityQueue<Plantimal> plantimals = new PriorityQueue<>(Comparator.comparingInt(Plantimal::getTickToSpawn));
+    private final PriorityQueue<Plantimal> plantimals = new PriorityQueue<>(Comparator.comparingInt(Plantimal::getTickToSpawn));
 
     private PlantimalsConfig plantimalsConfig;
     private MainConfig mainConfig;

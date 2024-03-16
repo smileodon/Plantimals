@@ -111,7 +111,7 @@ public class PlayerClickListener implements Listener {
             armorStand.setGravity(false); // Prevent the armor stand from falling
             armorStand.setCanPickupItems(false); // Prevent the armor stand from picking up items
             armorStand.setMarker(true); // Reduce the hitbox to virtually nothing
-            armorStand.setBasePlate(false); // Remove the base plate to reduce visibility
+            armorStand.setBasePlate(false); // Remove the baseplate to reduce visibility
             armorStand.setSmall(true); // Make the armor stand small
 
             // Delay setting the item by scheduling a task because otherwise the item is seeing rotating for a moment

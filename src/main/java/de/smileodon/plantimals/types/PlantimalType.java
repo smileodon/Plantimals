@@ -30,7 +30,6 @@ public enum PlantimalType {
             case RABBIT -> EntityType.RABBIT;
             case CHICKEN -> EntityType.CHICKEN;
             case COW -> EntityType.COW;
-            default -> throw new IllegalArgumentException("Unknown PlantableType: " + this);
         };
     }
 
@@ -41,7 +40,6 @@ public enum PlantimalType {
             case RABBIT -> Material.RABBIT;
             case CHICKEN -> Material.CHICKEN;
             case COW -> Material.BEEF;
-            default -> throw new IllegalArgumentException("Unknown PlantableType: " + this);
         };
     }
 }

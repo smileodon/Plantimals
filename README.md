@@ -28,19 +28,19 @@ This plugin introduces specific conditions under which animals can spawn. Below 
     - `0` to `7` - Farmland moisture level, where 0 is dry and 7 is fully hydrated.
     - Example: `1` indicates that the farmland must be slightly moist.
 
-- **secondsTill[Animal]Spawns**: Specifies the waiting period in seconds before an animal spawns once the conditions are met. Replace `[Animal]` with the specific animal name (Pig, Sheep, Rabbit, Chicken, Cow).
-    - `300` - Equivalent to 5 minutes.
+- **ticksTill[Animal]Spawns**: Specifies the waiting period in ticks before an animal spawns once the conditions are met. Replace `[Animal]` with the specific animal name (Pig, Sheep, Rabbit, Chicken, Cow).
+    - `6000` - Equivalent to 5 minutes.
 
 ### Example Configuration:
 
 ```yaml
 onlyActiveWhenSneaking: true
 requiredMoistureLevel: 1
-secondsTillPigSpawns: 300
-secondsTillSheepSpawns: 300
-secondsTillRabbitSpawns: 300
-secondsTillChickenSpawns: 300
-secondsTillCowSpawns: 300
+ticksTillPigSpawns: 300
+ticksTillSheepSpawns: 300
+ticksTillRabbitSpawns: 300
+ticksTillChickenSpawns: 300
+ticksTillCowSpawns: 300
 ```
 
 ## Permissions
