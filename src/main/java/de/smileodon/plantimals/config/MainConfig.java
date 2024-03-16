@@ -1,5 +1,9 @@
 package de.smileodon.plantimals.config;
 
+import de.smileodon.plantimals.types.Plantimal;
+
+import java.util.ArrayList;
+
 public class MainConfig {
     private boolean onlyActiveWhenSneaking = true;
     private int requiredMoistureLevel = 1;
@@ -10,6 +14,7 @@ public class MainConfig {
     private int secondsTillChickenSpawns = 300;
     private int secondsTillCowSpawns = 300;
 
+    private ArrayList<Plantimal> plantimals = new ArrayList<>();
 
     public MainConfig() {
     }
@@ -44,5 +49,14 @@ public class MainConfig {
 
     public int getRequiredMoistureLevel() {
         return requiredMoistureLevel;
+    }
+
+
+    public ArrayList<Plantimal> getPlantimals() {
+        return plantimals;
+    }
+
+    public void setPlantimals(ArrayList<Plantimal> plantimals) {
+        this.plantimals = plantimals;
     }
 }

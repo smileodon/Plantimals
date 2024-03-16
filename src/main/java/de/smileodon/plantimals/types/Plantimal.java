@@ -13,6 +13,7 @@ public class Plantimal {
 
     private final ArmorStand armorStand;
 
+
     public Plantimal(PlantimalType plantimalType, Location location, LocalDateTime timeToSpawn, ArmorStand armorStand) {
         this.plantimalType = plantimalType;
         this.location = location;

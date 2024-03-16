@@ -114,12 +114,17 @@ public enum PlantimalsManager {
         savePlantimalsConfig();
     }
 
+    // TODO: Fix bug with timestamp
     private void savePlantimalsConfig() {
-        jacksonConfig.secondary(plantimalsConfigKey);
+        /*
+        jacksonConfig.main().setPlantimals(plantimalsAsList);
+        jacksonConfig.save();
         System.out.println("Saving config");
+
+         */
     }
 
-    public MainConfig getMainConfig(){
+    public MainConfig getMainConfig() {
         return mainConfig;
     }
 
