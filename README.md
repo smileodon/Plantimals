@@ -10,6 +10,9 @@ The plugin's configuration allows for customization of several aspects, includin
 
 Plantimals offers a novel approach to interacting with the Minecraft environment, blending familiar mechanics with a touch of whimsy. Whether you're looking to add a bit of magic to your farm or simply want a new way to spawn animals, Plantimals provides a simple yet engaging solution.
 
+
+![screenshot](media/plantimals.jpg)
+
 ## Available Plantimals
 - Pig
 - Sheep
