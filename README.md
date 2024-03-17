@@ -49,6 +49,9 @@ ticksTillCowSpawns: 300
 ## Permissions
 The only permission this plugin has is `plantimals.use`. It allows players to plant **Plantimals**.
 
+## Support and suggestions
+You can get support and post your ideas on the [discord server](https://discord.smileodon.de).
+
 ## Technical information
 
 Built with **paperweight-userdev** for Paper 1.20.4 and Java 17+ (*sourceCompatibility Java 17*).
