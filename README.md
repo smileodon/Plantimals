@@ -20,6 +20,10 @@ Plantimals offers a novel approach to interacting with the Minecraft environment
 - Chicken
 - Cow
 
+
+## How to use
+To sow a plantimal, simply hold the corresponding raw meat item in your main hand and right-click on a farmland. Depending on the configuration, you may have to sneak (by default) and the farmland requires a certain skill level.
+
 ## Configuration Options
 This plugin introduces specific conditions under which animals can spawn. Below are the configurable options available in `config.yml`, allowing you to tailor the spawning mechanism to your liking:
 
